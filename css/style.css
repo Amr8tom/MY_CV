@@ -1,0 +1,346 @@
+:root {
+    --primaryColor: #676CDB;
+    --secondaryColor: #C4C4C4;
+    --lightColor: #ffffff;
+    --bgColor-1: #222A36;
+    --bgColor-2: #2D3540;
+    --padding: 8%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* delete all spaces and margins */
+    box-sizing: border-box;
+    /* to take the border size in initialize width and hieght of every thing*/
+}
+
+html {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    color: var(--lightColor);
+    /*default color*/
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    /*take the height of the height " responsive"*/
+    background-color: var(--bgColor-1);
+    display: flex;
+    /* In order for its elements to fill the space specified for it */
+    flex-direction: column;
+}
+
+h2 {
+    color: var(--primaryColor);
+    font-size: 2.2rem;
+    /*1 rem = 16px the value you initialize in html{} style*/
+    letter-spacing: 0.12rem;
+    /* distance betwean letters*/
+    cursor: pointer;
+    /* change the shape of the mouse to pointer when hover*/
+}
+
+nav {
+    background-color: var(--bgColor-1);
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* To make nav items in horizontal line*/
+}
+
+nav ul li {
+    display: inline-block;
+    /*all items in one line*/
+    margin: 0.8rem 1.5rem;
+}
+
+nav ul li a {
+    color: var(--lightColor);
+    text-decoration: none;
+    /* delete the line under reffrence*/
+    text-transform: capitalize;
+    /*Make the first char in each word capital*/
+    transition: 0.4s;
+    /* time of any animation e.g. hover*/
+}
+
+nav ul li a:hover {
+    color: var(--primaryColor);
+}
+
+.content {
+    flex-grow: 1;
+    /*Grows until it takes up all the available space*/
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* space betwean right half and left half of the home*/
+}
+
+span {
+    color: var(--primaryColor);
+}
+
+h1 {
+    color: var(--secondaryColor);
+    font-size: 3.0rem;
+    margin: 1.0rem 0;
+}
+
+h4 {
+    color: var(--secondaryColor);
+    font-size: 1.3rem;
+    letter-spacing: 0.12rem;
+}
+
+h3 {
+    color: var(--secondaryColor);
+    font-size: 1.7rem;
+    margin-bottom: 3.5rem;
+}
+
+.home .container-texts {
+    position: relative;
+    bottom: 70px;
+    width: 40%;
+}
+
+.btn {
+    background-color: var(--primaryColor);
+    color: var(--lightColor);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.81rem 1.87rem;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--primaryColor);
+}
+
+.social {
+    margin-top: 3.5rem;
+}
+
+.social img {
+    margin-right: 2rem;
+    width: 2.5rem;
+    transition: 0.4s;
+}
+
+.social img:hover {
+    transform: scale(1.2);
+}
+
+.home .container-images {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    bottom: 70px;
+}
+
+.home .container-images img {
+    position: absolute;
+    height: 100%;
+    left: 30%;
+    transition: 1s;
+}
+
+.shape {
+    height: 100%;
+    width: 82%;
+}
+
+.pic {
+    padding-left: 6.7rem;
+}
+
+.container-images:hover .pic {
+    left: 20%;
+    transform: scale(1.2);
+}
+
+
+/* HOME SECTION DONE HERE */
+
+.about {
+    background-color: var(--bgColor-2);
+    display: flex;
+    padding: 2rem var(--padding);
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about .container-about-me {
+    width: 50%;
+}
+
+.about .container-about-me p {
+    font-size: 18px;
+}
+
+.about .container-bio {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3rem;
+    padding-right: 5rem;
+}
+
+.about .container-bio .info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    align-items: baseline;
+}
+
+.about .container-bio .info .title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.about .container-bio .info .title .text {
+    font-size: 25px;
+    color: var(--secondaryColor);
+    padding-left: 1rem;
+}
+
+.about .container-bio .info .title img {
+    width: 1.3rem;
+}
+
+.about .container-bio .info .answer {
+    font-size: 16px;
+    color: var(--secondaryColor);
+}
+
+
+/* about SECTION DONE HERE */
+
+.education {
+    background-color: var(--bgColor-1);
+    display: flex;
+    padding: 2rem var(--padding);
+    justify-content: space-between;
+}
+
+.education .container-images {
+    width: 35%;
+}
+
+.education .container-images img {
+    width: 90%;
+}
+
+.education .container-education {
+    width: 50%;
+}
+
+.education .container-education h1 {
+    padding-bottom: 30px;
+}
+
+.education .container-education h4 {
+    padding-bottom: 10px;
+}
+
+.education .container-education img {
+    width: 1.7rem;
+    padding-left: 10px;
+    padding-right: 2px;
+}
+
+
+/*EDUCATION SECTION DONE HERE*/
+
+.skills {
+    background-color: var(--bgColor-2);
+    display: flex;
+    padding: 2rem var(--padding);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills .container-images {
+    width: 35%;
+}
+
+.skills .container-images img {
+    width: 90%;
+}
+
+.skills .container-skills {
+    width: 50%;
+}
+
+.content-skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+.skill {
+    width: 6.0rem;
+    height: 6.0rem;
+    background-color: var(--secondaryColor);
+    border-radius: 50%;
+    margin: 0 2rem 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill img {
+    width: 70%;
+}
+
+
+/* Skill SECTION DONE HERE */
+
+.contact {
+    background-color: var(--bgColor-1);
+    padding: 2rem var(--padding);
+}
+
+.container-contact-me {
+    font-size: 20px;
+    color: var(--secondaryColor);
+}
+
+
+/* CONTACT SECTION DONE HERE */
+
+.footer {
+    background-color: var(--bgColor-2);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding-bottom: 50px;
+}
+
+.footer .title {
+    margin-top: 40px;
+    height: 100%;
+    font-size: 15px;
+}
+
+.footer .social img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+
+/* FOOTER DONE HERE */
