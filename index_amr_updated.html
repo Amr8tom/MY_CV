@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amr Alaa Ali - Senior Flutter Developer Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #f2f2f2;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Header section */
+        header {
+            padding: 40px 0;
+            background-color: #333;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Profile image styling */
+        .profile-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Name and title styling */
+        header h1 {
+            font-size: 2.5rem;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+
+        /* Download CV button */
+        .btn-primary {
+            background-color: #3498db;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        /* Section styling */
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+        }
+
+        /* Projects section */
+        #projects .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #2c2c2c;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin: 5px;
+            color: #3498db;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills section */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .skills-container img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .skills-container .skill p {
+            font-size: 0.9rem;
+        }
+
+        /* Experience section */
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        /* Footer styling */
+        footer {
+            padding: 10px;
+            background-color: #333;
+            text-align: center;
+        }
+
+        /* Rain Effect */
+        .rain-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* So users can still interact with the page */
+            z-index: 1; /* Ensures the rain is above the content but below the header */
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 3px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: fall linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -100px;
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-container">
+            <img src="mypic.png" alt="Profile Picture" class="profile-pic">
+        </div>
+        <h1>Amr Alaa Ali</h1>
+        <p>Senior Flutter Developer</p>
+        <a href="cv.pdf" class="btn btn-primary">Download CV</a>
+    </header>
+
+    <!-- Rain container for the rain effect -->
+    <div class="rain-container" id="rain-container"></div>
+
+    <section id="about" class="text-center">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I am a Senior Mobile Application Developer specializing in Flutter. I pride myself on delivering fully functional and scalable mobile apps in days, not months. 
+                With extensive experience in building cross-platform applications for both Android and iOS, I focus on clean architecture and performance optimization to meet the highest industry standards. 
+            </p>
+            <p>
+                In addition to my Flutter expertise, I also have a solid understanding of PHP Laravel, which enables me to handle both the front-end and back-end development seamlessly. 
+                This full-stack approach allows me to deliver complete solutions, managing projects from A to Z efficiently.
+            </p>
+        </div>
+    </section>
+    
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="4.jpg" alt="Education App">
+                    <h3>Education App in India</h3>
+                    <p><strong>Duration:</strong> Aug 2023 - Jan 2024</p>
+                    <p><strong>Description:</strong> A comprehensive educational app with live video streaming and notification features, built using Flutter and Dart.</p>
+                    <p><strong>Skills:</strong> Flutter, Dart, REST APIs, Live Video Streaming</p>
+                    <div class="project-links">
+                        <a href="https://github.com/link_to_repo">GitHub</a>
+                        <a href="https://play.google.com/store/apps/details?id=app.example">Google Play</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="image_original.png" alt="Trusted Products">
+                    <h3>Trusted Products</h3>
+                    <p><strong>Duration:</strong> Oct 2023 - Nov 2023</p>
+                    <p><strong>Description:</strong> An app that integrates product searching using barcode scanners and Lottie animations, deployed with Flask API.</p>
+                    <p><strong>Skills:</strong> Flutter, Dart, Flask, Barcode Scanners</p>
+                    <div class="project-links">
+                        <a href="https://github.com/link_to_repo">GitHub</a>
+                        <a href="https://play.google.com/store/apps/details?id=app.example">Google Play</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="ahmed1.png" alt="Ahmed Saied E-commerce">
+                    <h3>Ahmed Saied E-commerce App</h3>
+                    <p><strong>Duration:</strong> May 2023 - Aug 2023</p>
+                    <p><strong>Description:</strong> An e-commerce app with secure payment, Google Maps integration, and dynamic search features.</p>
+                    <p><strong>Skills:</strong> Flutter, Dart, REST APIs, Firebase</p>
+                    <div class="project-links">
+                        <a href="https://github.com/link_to_repo">GitHub</a>
+                        <a href="https://play.google.com/store/apps/details?id=app.example">Google Play</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <img src="masjied.png" alt="Masjid Quba">
+                    <h3>Masjid Quba</h3>
+                    <p><strong>Duration:</strong> May 2023 - Aug 2023</p>
+                    <p><strong>Description:</strong> A prayer time management app for a mosque, featuring custom notifications and Firebase integration.</p>
+                    <p><strong>Skills:</strong> Flutter, Dart, Webview, Firebase</p>
+                    <div class="project-links">
+                        <a href="https://github.com/link_to_repo">GitHub</a>
+                        <a href="https://play.google.com/store/apps/details?id=app.example">Google Play</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <img src="oral.jpg" alt="Detect Mouth Cancer">
+                    <h3>Detect Mouth Cancer</h3>
+                    <p><strong>Duration:</strong> Oct 2020 - Jun 2023</p>
+                    <p><strong>Description:</strong> A deep learning-powered app that helps detect mouth cancer using a custom CNN model.</p>
+                    <p><strong>Skills:</strong> Flutter, Dart, CNN, Flask</p>
+                    <div class="project-links">
+                        <a href="https://github.com/link_to_repo">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <img src="duaya1.webp" alt="Duaya App">
+                    <h3>Duaya App</h3>
+                    <p><strong>Description:</strong> A complete mobile app for managing health products, built with clean code and scalable architecture.</p>
+                    <p><strong>Skills:</strong> Flutter, OOP, Clean Code</p>
+                    <div class="project-links">
+                        <a href="https://github.com/link_to_repo">GitHub</a>
+                        <a href="https://play.google.com/store/apps/details?id=app.example">Google Play</a>
+                    </div>
+                </div>
+                            <!-- New project 7: Prinz Care for Patients -->
+            <div class="project-card">
+                <img src="prinz_patient.png" alt="Prinz Care for Patients">
+                <h3>Prinz Care for Patients</h3>
+                <p><strong>Duration:</strong> Jul 2022 - Present</p>
+                <p><strong>Description:</strong> A Flutter-based app that allows patients to book and manage doctor appointments, view medical history, and receive real-time updates on their appointments.</p>
+                <p><strong>Skills:</strong> Flutter, Dart, Firebase notification,php Laravel, REST APIs</p>
+                <div class="project-links">
+                    <a href="https://github.com/link_to_repo">GitHub</a>
+                    <a href="https://play.google.com/store/apps/details?id=prinzcare.patient">Google Play</a>
+                </div>
+            </div>
+
+            <!-- New project 8: Prinz Care for Doctors -->
+            <div class="project-card">
+                <img src="prinz_doctor.png" alt="Prinz Care for Doctors">
+                <h3>Prinz Care for Doctors</h3>
+                <p><strong>Duration:</strong> Jul 2022 - Present</p>
+                <p><strong>Description:</strong> A companion app for doctors to manage patient appointments, view patient histories, and communicate with patients in real-time using Flutter and Firebase integration.</p>
+                <p><strong>Skills:</strong> Flutter, Dart, php Laravel, Real-Time Messaging, REST APIs</p>
+                <div class="project-links">
+                    <a href="https://github.com/link_to_repo">GitHub</a>
+                    <a href="https://play.google.com/store/apps/details?id=prinzcare.doctor">Google Play</a>
+                </div>
+            </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="text-center">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+                <div class="skill" style="text-align: center;">
+                    <img src="flutter icon.png" alt="Flutter" style="width: 80px;">
+                    <p style="margin-top: 10px;">Flutter</p>
+                </div>
+                <div class="skill" style="text-align: center;">
+                    <img src="android.jpg" alt="Android" style="width: 80px;">
+                    <p style="margin-top: 10px;">Android</p>
+                </div>
+                <div class="skill" style="text-align: center;">
+                    <img src="clean2.png" alt="Clean Code" style="width: 80px;">
+                    <p style="margin-top: 10px;">Clean Code</p>
+                </div>
+                <div class="skill" style="text-align: center;">
+                    <img src="cleanarc.jpg" alt="Clean Architecture" style="width: 80px;">
+                    <p style="margin-top: 10px;">Clean Architecture</p>
+                </div>
+                <div class="skill" style="text-align: center;">
+                    <img src="lllaravle.png" alt="PHP Laravel" style="width: 80px;">
+                    <p style="margin-top: 10px;">PHP Laravel</p>
+                </div>
+                <div class="skill" style="text-align: center;">
+                    <img src="tt.svg" alt="Firebase" style="width: 80px;">
+                    <p style="margin-top: 10px;">Firebase</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="experience" class="text-center">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>DUAYA-دوايا</h3>
+                <p>Senior Flutter Developer | Feb 2024 - Present | 6th of October, Egypt</p>
+            </div>
+            <div class="experience-item">
+                <h3>Upwork</h3>
+                <p>Flutter Developer | Nov 2022 - Present | Remote</p>
+            </div>
+            <div class="experience-item">
+                <h3>CS Academy</h3>
+                <p>Data Structure and Algorithms Instructor | Oct 2023 - July 2024 | Cairo, Egypt</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Email: king88amr@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/amr-alaa-6433b0222" style="color: #3498db;">Amr Alaa LinkedIn</a></p>
+    </footer>
+
+    <script>
+        // Rain Effect Script
+        const rainContainer = document.getElementById('rain-container');
+
+        // Generate 100 raindrops
+        for (let i = 0; i < 100; i++) {
+            const raindrop = document.createElement('div');
+            raindrop.classList.add('raindrop');
+            raindrop.style.left = `${Math.random() * 100}vw`;
+            raindrop.style.animationDuration = `${Math.random() * 1 + 1.5}s`;
+            raindrop.style.animationDelay = `${Math.random() * 2}s`;
+            rainContainer.appendChild(raindrop);
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
