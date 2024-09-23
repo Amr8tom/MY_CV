@@ -159,6 +159,75 @@
             margin-bottom: 20px;
         }
 
+
+
+
+
+        
+        /* Certifications section */
+
+
+
+
+    
+        #certifications .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .certification-card {
+            background-color: #f2f2f2; /* Light background for certification cards */
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .certification-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .certification-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .certification-card p {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+  /* Improved Button Styling */
+        .btn-download {
+            background-image: linear-gradient(to right, #3498db, #2980b9);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            margin-top: auto; /* Makes sure the button stays at the bottom */
+        }
+
+        .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+
+
+
         /* Footer styling */
         footer {
             padding: 10px;
@@ -212,7 +281,7 @@
             <p style="margin: 5px 0;">WhatsApp: <a href="https://wa.me/201011577033" style="color: #3498db;">+201011577033</a></p>
             <p style="margin: 5px 0;">LinkedIn: <a href="https://www.linkedin.com/in/amr-alaa-6433b0222" style="color: #3498db;">Amr Alaa LinkedIn</a></p>
         </div>
-        <a href="Amr_Alaa_ali (1) (2).pdf" class="btn btn-primary">Download CV</a>
+        <a href="Amr_Alaa_cv_certifications.rar" class="btn btn-primary">Download CV & certifications</a>
     </header>
     
     <!-- Rain container for the rain effect -->
@@ -349,6 +418,88 @@
         </div>
     </section>
 
+
+    <section id="certifications" class="text-center">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="certification-grid">
+                <!-- Certification 1 -->
+                <div class="certification-card">
+                    <img src="flutter_giza.png" alt="Flutter Training Certification in Giza Government">
+                    <h3>Flutter Training Certification in Giza Government</h3>
+                    <p><strong>Issued by:</strong> Giza Government</p>
+                    <p><strong>Date:</strong> Oct 2021</p>
+                    <a href="Flutter Training Certification in Giza Government.pdf" 
+                    download="flutter_giza.pdf" 
+                    class="btn-download">Download Certification</a>                </div>
+    
+                <!-- Certification 2 -->
+                <div class="certification-card">
+                    <img src="flutter1.jpg" alt="The Complete Flutter & Dart Development Course">
+                    <h3>The Complete Flutter & Dart Development Course</h3>
+                    <p><strong>Issued by:</strong> Udemy</p>
+                    <p><strong>Date:</strong> Sept 2022</p>
+                    <a href="flutter1.pdf" 
+                    download="The Complete Flutter & Dart Development Course.pdf" 
+                    class="btn-download">Download Certification</a>                </div>
+    
+                <!-- Certification 3 -->
+                <div class="certification-card">
+                    <img src="flutter2.png" alt="The Complete Flutter Development Guide Course">
+                    <h3>The Complete Flutter Development Guide Course</h3>
+                    <p><strong>Issued by:</strong> Udemy</p>
+                    <p><strong>Date:</strong> Sept 2023</p>
+                    <!-- Updated button to link to the actual certificate path -->
+                    <a href="flutter2.pdf" 
+                       download="The Complete Flutter Development Guide Course.pdf" 
+                       class="btn-download">Download Certification</a>
+                </div>
+                
+    
+                <!-- Certification 4 -->
+                <div class="certification-card">
+                    <img src="flutter3.png" alt="Flutter Advanced - Clean Architecture With MVVM">
+                    <h3>Flutter Advanced - Clean Architecture With MVVM</h3>
+                    <p><strong>Issued by:</strong> Udemy</p>
+                    <p><strong>Date:</strong> 2023</p>
+                    <a href="UC-51c6725a-d8b8-4bc5-a82c-61f78e291417.pdf" 
+                    download="Flutter Advanced - Clean Architecture With MVVM.pdf" 
+                    class="btn-download">Download Certification</a>                </div>
+    
+                <!-- Certification 5 -->
+                <div class="certification-card">
+                    <img src="algo.jpg" alt="Searching and Sorting Algorithms Certification">
+                    <h3>Searching and Sorting Algorithms Certification</h3>
+                    <p><strong>Issued by:</strong> Udemy</p>
+                    <p><strong>Date:</strong> Sept 2023</p>
+                    <a href="algo.pdf" 
+                    download="Searching and Sorting Algorithms Certification.pdf" 
+                    class="btn-download">Download Certification</a>                  </div>
+    
+                <!-- Certification 6 -->
+                <div class="certification-card">
+                    <img src="algo2.jpg" alt="Algorithm Analysis and Design Certification">
+                    <h3>Algorithm Analysis and Design Certification</h3>
+                    <p><strong>Issued by:</strong> Udemy</p>
+                    <p><strong>Date:</strong> Sept 2023</p>
+                    <a href="algo2.pdf" 
+                    download="Algorithm Analysis and Design Certification.pdf" 
+                    class="btn-download">Download Certification</a>                    </div>
+    
+                <!-- Certification 7 -->
+                <div class="certification-card">
+                    <img src="bioinformatics.png" alt="Bioinformatics Training Certification">
+                    <h3>Bioinformatics Training Certification</h3>
+                    <p><strong>Issued by:</strong> Cairo University</p>
+                    <p><strong>Date:</strong> June 2022</p>
+                    <a href="i mole.pdf" 
+                    download="Bioinformatics Training Certification.pdf" 
+                    class="btn-download">Download Certification</a>                 </div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="skills" class="text-center">
         <div class="container">
             <h2>Skills</h2>
@@ -393,6 +544,8 @@
         </div>
     </section>
     
+
+
     <section id="experience" class="text-center">
         <div class="container">
             <h2>Experience</h2>
@@ -405,16 +558,12 @@
                 <p>Flutter Developer | Nov 2022 - Present | Remote</p>
             </div>
             <div class="experience-item">
-                <h3>CS Academy</h3>
-                <p>Data Structure and Algorithms Instructor | Oct 2023 - July 2024 | Cairo, Egypt</p>
+                <h3>Time Vip</h3>
+                <p>Flutter Developer | India | Remote </p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>Email: king88amr@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/amr-alaa-6433b0222" style="color: #3498db;">Amr Alaa LinkedIn</a></p>
-    </footer>
 
     <script>
         // Rain Effect Script
@@ -429,6 +578,45 @@
             raindrop.style.animationDelay = `${Math.random() * 2}s`;
             rainContainer.appendChild(raindrop);
         }
+
+        // Certificate Download Function
+        function downloadCertificate(title, issuer, date) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFont('Times', 'bold');
+            doc.setFontSize(24);
+            doc.text("Certificate of Completion", 105, 40, { align: "center" });
+
+            doc.setFont('Times', 'normal');
+            doc.setFontSize(16);
+            doc.text(`This certifies that`, 105, 60, { align: "center" });
+
+            doc.setFont('Times', 'bold');
+            doc.setFontSize(20);
+            doc.text("Amr Alaa Ali", 105, 80, { align: "center" });
+
+            doc.setFont('Times', 'normal');
+            doc.setFontSize(16);
+            doc.text(`has successfully completed`, 105, 100, { align: "center" });
+
+            doc.setFont('Times', 'bold');
+            doc.setFontSize(18);
+            doc.text(title, 105, 120, { align: "center" });
+
+            doc.setFont('Times', 'normal');
+            doc.setFontSize(16);
+            doc.text(`Issued by ${issuer} on ${date}`, 105, 140, { align: "center" });
+
+            doc.setFont('Times', 'italic');
+            doc.setFontSize(12);
+            doc.text("Powered by jsPDF", 200, 290, { align: "right" });
+
+            // Save the PDF
+            doc.save(`${title}_Certificate.pdf`);
+        }
+
+
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
