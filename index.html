@@ -8,15 +8,15 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff; /* Changed to white */
-            color: #333333; /* Darker text for contrast */
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            background-color: #ffffff;
+            color: #333333;
+            overflow-x: hidden;
         }
 
         /* Header section */
         header {
             padding: 40px 0;
-            background-color: #f2f2f2; /* Header background remains dark */
+            background-color: #f2f2f2;
             text-align: center;
             position: relative;
         }
@@ -25,14 +25,14 @@
         .profile-container {
             display: inline-block;
             position: relative;
-            background-color: #ffffff; /* Profile section background */
-            padding: 20px; /* Padding for profile section */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .profile-pic {
-            width: 150px;
+            width: 120px;
             height: 150px;
             border-radius: 50%;
             border: 5px solid #3498db;
@@ -81,13 +81,6 @@
             margin-bottom: 20px;
         }
 
-        /* Contact info styling */
-        .contact-info {
-            margin-top: 15px;
-            font-size: 1rem;
-            color: #333333; /* Updated for better readability */
-        }
-
         /* Projects section */
         #projects .project-grid {
             display: grid;
@@ -96,7 +89,7 @@
         }
 
         .project-card {
-            background-color: #f2f2f2; /* Light background for cards */
+            background-color: #f2f2f2;
             padding: 15px;
             border-radius: 8px;
             text-align: center;
@@ -111,7 +104,7 @@
 
         .project-card img {
             width: 100%;
-            height: 150px; /* Fixed height for uniformity */
+            height: 150px;
             object-fit: cover;
             margin-bottom: 10px;
             border-radius: 6px;
@@ -120,11 +113,6 @@
         .project-card h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
-        }
-
-        .project-card p {
-            font-size: 0.9rem;
-            margin-bottom: 5px;
         }
 
         .project-links a {
@@ -137,39 +125,7 @@
             text-decoration: underline;
         }
 
-        /* Skills section */
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .skills-container img {
-            width: 80px;
-            margin-bottom: 10px;
-        }
-
-        .skills-container .skill p {
-            font-size: 0.9rem;
-        }
-
-        /* Experience section */
-        .experience-item {
-            margin-bottom: 20px;
-        }
-
-
-
-
-
-        
         /* Certifications section */
-
-
-
-
-    
         #certifications .certification-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -177,7 +133,7 @@
         }
 
         .certification-card {
-            background-color: #f2f2f2; /* Light background for certification cards */
+            background-color: #f2f2f2;
             padding: 15px;
             border-radius: 8px;
             text-align: center;
@@ -205,7 +161,8 @@
             font-size: 0.9rem;
             margin-bottom: 30px;
         }
-  /* Improved Button Styling */
+
+        /* Improved Button Styling */
         .btn-download {
             background-image: linear-gradient(to right, #3498db, #2980b9);
             border: none;
@@ -217,7 +174,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            margin-top: auto; /* Makes sure the button stays at the bottom */
+            margin-top: auto;
         }
 
         .btn-download:hover {
@@ -225,15 +182,12 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
-
-
-
         /* Footer styling */
         footer {
             padding: 10px;
-            background-color: #333; /* Footer remains dark */
+            background-color: #333;
             text-align: center;
-            color: #ffffff; /* Light text in footer */
+            color: #ffffff;
         }
 
         /* Rain Effect */
@@ -243,8 +197,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* So users can still interact with the page */
-            z-index: 1; /* Ensures the rain is above the content but below the header */
+            pointer-events: none;
+            z-index: 1;
         }
 
         .raindrop {
@@ -254,6 +208,12 @@
             background-color: rgba(106, 206, 219, 0.5);
             animation: fall linear infinite;
             opacity: 0;
+        }
+
+        /* Modal image styling */
+        .modal-body img {
+            width: 100%;
+            height: auto;
         }
 
         @keyframes fall {
@@ -267,12 +227,13 @@
             }
         }
     </style>
+
 </head>
 <body>
 
     <header>
         <div class="profile-container">
-            <img src="me.jpg" alt="Profile Picture" class="profile-pic">
+            <img src="me3.jpeg" alt="Profile Picture" class="profile-pic">
         </div>
         <h1 style="font-size: 2rem;">Amr Alaa Ali</h1>
         <p style="font-size: 1rem;">Senior Flutter Developer</p>
@@ -300,6 +261,24 @@
             </p>
         </div>
     </section>
+
+
+    <!-- Modal for image display -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Image Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Project Image">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="projects">
         <div class="container">
@@ -455,6 +434,7 @@
                        class="btn-download">Download Certification</a>
                 </div>
                 
+                
     
                 <!-- Certification 4 -->
                 <div class="certification-card">
@@ -496,7 +476,6 @@
                     download="Bioinformatics Training Certification.pdf" 
                     class="btn-download">Download Certification</a>                 </div>
             </div>
-            
         </div>
     </section>
 
@@ -559,8 +538,8 @@
                 <p>Flutter Developer | Nov 2022 - Present | Remote</p>
             </div>
             <div class="experience-item">
-                <h3>Time Vip</h3>
-                <p>Flutter Developer | India | Remote </p>
+                <h3>Time Vip In India</h3>
+                <p>Flutter Developer |India | Remote </p>
             </div>
         </div>
     </section>
@@ -617,6 +596,11 @@
             doc.save(`${title}_Certificate.pdf`);
         }
 
+        function showImageModal(imageSrc, title) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModalLabel').innerText = title;
+            $('#imageModal').modal('show');
+        }
 
     </script>
 
