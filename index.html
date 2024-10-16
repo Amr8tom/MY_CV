@@ -32,8 +32,8 @@
         }
 
         .profile-pic {
-            width: 220px;
-            height: 220px;
+            width: 170px;
+            height: 170px;
             border-radius: 50%;
             border: 5px solid #3498db;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
@@ -282,35 +282,32 @@
 <body>
 
     <header>
-        <div class="profile-container">
-            <img src="myPro.png" alt="Profile Picture" class="profile-pic">
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <!-- Profile Image -->
+            <div class="profile-container" style="margin-right: 20px;">
+                <img src="myPro.png" alt="Profile Picture" class="profile-pic">
+            </div>
+            
+            <!-- Information -->
+            <div>
+                <h1 style="font-size: 2rem;">Amr Alaa Ali</h1>
+                <p style="font-size: 1rem;">Senior Flutter Developer</p>
+                <div class="contact-info">
+                    <p style="margin: 5px 0;">Email: <a href="mailto:king88amr@gmail.com" style="color: #3498db;">king88amr@gmail.com</a></p>
+                    <p style="margin: 5px 0;">WhatsApp: <a href="https://wa.me/201011577033" style="color: #3498db;">+201011577033</a></p>
+                    <p style="margin: 5px 0;">LinkedIn: <a href="https://www.linkedin.com/in/amr-alaa-6433b0222" style="color: #3498db;">Amr Alaa LinkedIn</a></p>
+                </div>
+                <a href="Amr_Alaa_cv_certifications.rar" class="btn btn-primary" style="margin-top: 10px;">Download CV & certifications</a>
+            </div>
+           
         </div>
-        <h1 style="font-size: 2rem;">Amr Alaa Ali</h1>
-        <p style="font-size: 1rem;">Senior Flutter Developer</p>
-        <div class="contact-info">
-            <p style="margin: 5px 0;">Email: <a href="mailto:king88amr@gmail.com" style="color: #3498db;">king88amr@gmail.com</a></p>
-            <p style="margin: 5px 0;">WhatsApp: <a href="https://wa.me/201011577033" style="color: #3498db;">+201011577033</a></p>
-            <p style="margin: 5px 0;">LinkedIn: <a href="https://www.linkedin.com/in/amr-alaa-6433b0222" style="color: #3498db;">Amr Alaa LinkedIn</a></p>
-        </div>
-        <a href="Amr_Alaa_cv_certifications.rar" class="btn btn-primary">Download CV & certifications</a>
     </header>
     
     <!-- Rain container for the rain effect -->
     <div class="rain-container" id="rain-container"></div>
-
-    <section id="about" class="text-center">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I am a Senior Mobile Application Developer specializing in Flutter. I pride myself on delivering fully functional and scalable mobile apps in days, not months. 
-                With extensive experience in building cross-platform applications for both Android and iOS, I focus on clean architecture and performance optimization to meet the highest industry standards. 
-            </p>
-            <p>
-                In addition to my Flutter expertise, I also have a solid understanding of PHP Laravel, which enables me to handle both front-end and back-end development seamlessly. 
-                This full-stack approach allows me to deliver complete solutions, managing projects from A to Z efficiently.
-            </p>
-        </div>
-    </section>
+    
+   
+    
 
 
     <!-- Modal for image display -->
@@ -435,33 +432,7 @@
                     </div>
                 </div>
 
-                <div class="certification-gallery">
-                    <div class="cert-item">
-                      <img src="cert1.jpg" alt="Certification 1" class="cert-image" onclick="openPopup('popup1')">
-                      <div id="popup1" class="popup-overlay">
-                        <div class="popup-content">
-                          <span class="close-btn" onclick="closePopup('popup1')">&times;</span>
-                          <img src="cert1.jpg" alt="Certification 1">
-                          <p>Details about Certification 1</p>
-                        </div>
-                      </div>
-                    </div>
-                  
-                    <div class="cert-item">
-                      <img src="cert2.jpg" alt="Certification 2" class="cert-image" onclick="openPopup('popup2')">
-                      <div id="popup2" class="popup-overlay">
-                        <div class="popup-content">
-                          <span class="close-btn" onclick="closePopup('popup2')">&times;</span>
-                          <img src="cert2.jpg" alt="Certification 2">
-                          <p>Details about Certification 2</p>
-                        </div>
-                      </div>
-                    </div>
-                  
-                    <!-- Add more certifications as needed -->
-                  </div>
-                  
-
+          
                 <!-- Project 9 -->
                 <div class="project-card">
                     <img src="4.jpg" alt="Education App"  class="cert-image" onclick="openPopup('popup2')" >
@@ -560,7 +531,19 @@
             </div>
         </div>
     </section>
-
+    <section id="about" class="text-center">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I am a Senior Mobile Application Developer specializing in Flutter. I pride myself on delivering fully functional and scalable mobile apps in days, not months. 
+                With extensive experience in building cross-platform applications for both Android and iOS, I focus on clean architecture and performance optimization to meet the highest industry standards. 
+            </p>
+            <p>
+                In addition to my Flutter expertise, I also have a solid understanding of PHP Laravel, which enables me to handle both front-end and back-end development seamlessly. 
+                This full-stack approach allows me to deliver complete solutions, managing projects from A to Z efficiently.
+            </p>
+        </div>
+    </section>
 
     <section id="skills" class="text-center">
         <div class="container">
