@@ -26,14 +26,14 @@
             display: inline-block;
             position: relative;
             background-color: #ffffff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .profile-pic {
-            width: 120px;
-            height: 150px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             border: 5px solid #3498db;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
@@ -44,6 +44,56 @@
             transform: scale(1.05);
             box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.5);
         }
+
+
+
+
+        .certification-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cert-item {
+  position: relative;
+}
+
+.cert-image {
+  width: 150px; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.popup-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.popup-content img {
+  max-width: 100%; /* Full width inside popup */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 
         /* Name and title styling */
         header h1 {
@@ -233,7 +283,7 @@
 
     <header>
         <div class="profile-container">
-            <img src="me3.jpeg" alt="Profile Picture" class="profile-pic">
+            <img src="myPro.png" alt="Profile Picture" class="profile-pic">
         </div>
         <h1 style="font-size: 2rem;">Amr Alaa Ali</h1>
         <p style="font-size: 1rem;">Senior Flutter Developer</p>
@@ -385,9 +435,41 @@
                     </div>
                 </div>
 
+                <div class="certification-gallery">
+                    <div class="cert-item">
+                      <img src="cert1.jpg" alt="Certification 1" class="cert-image" onclick="openPopup('popup1')">
+                      <div id="popup1" class="popup-overlay">
+                        <div class="popup-content">
+                          <span class="close-btn" onclick="closePopup('popup1')">&times;</span>
+                          <img src="cert1.jpg" alt="Certification 1">
+                          <p>Details about Certification 1</p>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="cert-item">
+                      <img src="cert2.jpg" alt="Certification 2" class="cert-image" onclick="openPopup('popup2')">
+                      <div id="popup2" class="popup-overlay">
+                        <div class="popup-content">
+                          <span class="close-btn" onclick="closePopup('popup2')">&times;</span>
+                          <img src="cert2.jpg" alt="Certification 2">
+                          <p>Details about Certification 2</p>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <!-- Add more certifications as needed -->
+                  </div>
+                  
+
                 <!-- Project 9 -->
                 <div class="project-card">
-                    <img src="4.jpg" alt="Education App">
+                    <img src="4.jpg" alt="Education App"  class="cert-image" onclick="openPopup('popup2')" >
+                    <!-- <div class="popup-content"> -->
+                        <!-- <span class="close-btn" onclick="closePopup('popup2')">&times;</span> -->
+                        <!-- <img src="4.jpg" alt="Certification 2"> -->
+                        <!-- <p>Details about Certification 2</p> -->
+                      <!-- </div> -->
                     <h3>Education App in India</h3>
                     <p><strong>Description:</strong> A comprehensive educational app with live video streaming and notification features, built using Flutter and Dart.</p>
                     <p><strong>Skills:</strong> Flutter, Dart, REST APIs, Live Video Streaming</p>
@@ -601,6 +683,15 @@
             document.getElementById('imageModalLabel').innerText = title;
             $('#imageModal').modal('show');
         }
+
+        function openPopup(popupId) {
+  document.getElementById(popupId).style.display = 'flex';
+}
+
+function closePopup(popupId) {
+  document.getElementById(popupId).style.display = 'none';
+}
+
 
     </script>
 
