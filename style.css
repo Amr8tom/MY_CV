@@ -14,6 +14,7 @@ body {
     /* Enable vertical scrolling */
 }
 
+
 html {
     scroll-behavior: smooth;
     /* Smooth scrolling */
@@ -69,6 +70,7 @@ canvas {
         opacity: 1;
     }
 }
+
 
 /* Loading Screen */
 .loading-screen {
@@ -316,6 +318,16 @@ h2 {
     color: white;
 }
 
+
+.screen h1 {
+    font-size: 2rem;
+    text-align: center;
+
+    width: 80%;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 162, 255, 0.8);
+}
+
 /* Navigation Menu */
 .nav {
     position: fixed;
@@ -465,6 +477,24 @@ h2 {
     right: 0;
 }
 
+.line {
+    display: none;
+    /* Initially hidden */
+    opacity: 0;
+    width: 90%;
+    /* Adjusts text width responsively */
+    max-width: 80vw;
+    /* Limits text width for better readability */
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* Responsive font size */
+    text-align: center;
+    word-wrap: break-word;
+    /* Ensures long words wrap */
+    line-height: 1.3;
+    /* Improves readability */
+    margin: 0 auto;
+    /* Centers text */
+}
 
 
 /* Responsive Design */

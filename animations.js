@@ -5,7 +5,7 @@ function startAnimation() {
     canvas.height = window.innerHeight;
     let nodes = [];
     let mouse = { x: null, y: null };
-    let texts = ["Flawless Apps", "Secured Apps", "AI Apps", "Smooth UX", "Scalable", "high performance", "User-Friendlly"];
+    let texts = ["Flawless Apps", "Secured Apps", "AI Apps", "Smooth UX", "Scalable", "High Performance", "User-Friendly"];
 
     document.addEventListener("mousemove", (event) => {
         mouse.x = event.clientX;
@@ -46,7 +46,9 @@ function startAnimation() {
             ctx.fill();
             ctx.closePath();
 
-            ctx.font = "16px Arial";
+            // Responsive font size
+            const fontSize = Math.max(12, Math.min(24, canvas.width / 50)); // Adjust font size based on screen width
+            ctx.font = `${fontSize}px Arial`;
             ctx.fillStyle = "#fff";
             ctx.fillText(this.text, this.x + 10, this.y - 10);
         }
@@ -96,7 +98,6 @@ function startAnimation() {
         requestAnimationFrame(animate);
     }
 
-
     function startHandwritingAnimation() {
         const canvas = document.createElement("canvas");
         document.body.appendChild(canvas);
@@ -104,16 +105,18 @@ function startAnimation() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const text = "Welcome to the Factory of Animated , Fancy, and Robust Apps!";
+        const text = "Welcome to the Factory of Animated, Fancy, and Robust Apps!";
         let index = 0;
-        let x = canvas.width / 8;
-        let y = canvas.height / 9;
+        let x = canvas.width / 9;
+        let y = canvas.height / 7;
         let opacity = 1.0;
 
-        ctx.font = "36px Arial";
+        // Responsive font size for handwriting animation
+        const fontSize = Math.max(24, Math.min(30, canvas.width / 20)); // Adjust font size based on screen width
+        ctx.font = `${fontSize}px Arial`;
         ctx.fillStyle = `rgba(0, 255, 255, ${opacity})`; // Cyan color with opacity
         ctx.textAlign = "left";
-        ctx.textBaseline = "middle";
+        ctx.textBaseline = "left";
 
         function drawLetterByLetter() {
             if (index < text.length) {
@@ -136,17 +139,22 @@ function startAnimation() {
                 if (opacity <= 0) {
                     clearInterval(fadeInterval);
                 }
-            }, 100);
+            }, 450);
         }
 
         drawLetterByLetter();
     }
+
+    // Handle window resize for responsiveness
+    window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        createWeb();
+    });
 
     window.onload = startHandwritingAnimation;
 
     startHandwritingAnimation();
     createWeb();
     animate();
-    showAnimatedText();
 }
-

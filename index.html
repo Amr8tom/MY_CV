@@ -15,17 +15,17 @@
     <!-- Navigation Menu (Initially Hidden) -->
     <nav id="navMenu" class="nav">
         <ul>
-            <li><a href="#screen1">Home</a></li>
-            <li><a href="#projects"></a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">projects</a></li>
             <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <!-- <li><a href="#skills">Skills</a></li> -->
         </ul>
     </nav>
 
 
 
     <!-- Main Sections -->
-    <section id="screen1" class="screen">
+    <section id="home" class="screen">
         <h1> </h1>
     </section>
 
@@ -207,7 +207,13 @@
         });
 
     </script>
+    <script>
 
+        if (x > canvas.width - ctx.measureText(text[index]).width) {
+            x = canvas.width / 8;
+            y += fontSize + 10; // Move to the next line
+        }
+    </script>
 
 </body>
 
