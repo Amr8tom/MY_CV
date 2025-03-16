@@ -1,0 +1,477 @@
+/* General Styles */
+body {
+    display: block;
+    height: auto;
+    min-height: 100vh;
+    background: url('blak.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(121, 202, 224);
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+}
+
+/* Canvas */
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    /* Allow scrolling over canvas */
+}
+
+/* Header */
+.header {
+    position: absolute;
+    top: 30px;
+    /* Fixed typo: added 'px' */
+    width: 100%;
+    font-size: 34px;
+    font-weight: bold;
+    color: rgba(0, 162, 255, 1);
+    text-shadow: 0 0 10px rgba(0, 162, 255, 0.8);
+}
+
+/* Mobile Section */
+.mobile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: rgb(17, 19, 20);
+    width: 280px;
+    height: 560px;
+    background: rgba(0, 162, 255, 0.1);
+    border: 4px solid rgba(0, 162, 255, 0.5);
+    border-radius: 30px;
+    transform: translate(-50%, -50%) scale(0);
+    box-shadow: 0 0 15px rgba(0, 162, 255, 0.8);
+    opacity: 0;
+    animation: fadeInScale 2s ease-in-out forwards;
+}
+
+@keyframes fadeInScale {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    /* Fixed typo: changed '12' to '0' */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    color: cyan;
+    font-weight: bold;
+    z-index: 999;
+}
+
+/* Animated Text */
+.animated-text {
+    font-size: 26px;
+    font-weight: bold;
+    white-space: pre-wrap;
+    overflow: hidden;
+    background: linear-gradient(90deg, #ff8c00, #ff2e63);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact Info */
+.contact-info {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.contact-info a {
+    color: #1DA1F2;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* Adjust project card styling */
+.project-card {
+    width: 100%;
+    opacity: 0.7;
+    max-width: 400px;
+    /* Control max width */
+}
+
+
+
+/* 🔹 Hover Effect for Project Card */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+}
+
+/* 🔵 Larger Project Images */
+.project-card img {
+    width: 80%;
+    height: 250px;
+    /* Bigger image */
+    /* object-fit: cover; */
+    /* border-radius: 10px; */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🔹 Image Hover Effect */
+/* 🟡 Project Titles */
+.project-card h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #00c8ff;
+    /* Bright cyan */
+}
+
+/* 🟣 Project Description */
+.project-card p {
+
+    font-size: 16px;
+    color: #c0e3ff;
+    margin-bottom: 15px;
+}
+
+/* 🔗 Project Links */
+.project-links {
+    margin-top: 15px;
+}
+
+/* 🔵 Stylish Buttons for Links */
+.project-links a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, #ff8c00, #ff2e63);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* 🔹 Button Hover Effect */
+.project-links a:hover {
+    background: linear-gradient(90deg, #ff2e63, #ff8c00);
+    transform: scale(1.1);
+}
+
+/* Stylish Buttons for Links */
+.project-links a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, #ff8c00, #ff2e63);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Button Hover Effect */
+.project-links a:hover {
+    background: linear-gradient(90deg, #ff2e63, #ff8c00);
+    transform: scale(1.1);
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* Slider Track */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Each Slide */
+.slider-item {
+    min-width: 50%;
+    /* Two slides visible at a time */
+    display: flex;
+    justify-content: center;
+}
+
+/* Navigation Buttons */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(51, 144, 153, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s;
+}
+
+.slider-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Full Height Sections */
+.screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+
+/* Navigation Menu */
+.nav {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 1;
+    /* Ensure it's visible */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: rgba(94, 157, 157, 0.522);
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.nav ul li a:hover {
+    color: cyan;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Reset Margin and Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Certifications Section */
+#certifications {
+    text-align: center;
+    padding: 50px 0;
+    background: #111;
+    color: white;
+}
+
+/* Certification Slider */
+.certification-slider-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Certification Track */
+.certification-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.certification-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Certification Cards */
+.certification-card {
+    min-width: 30%;
+    max-width: 30%;
+    margin: 10px;
+    padding: 20px;
+    background: #222;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.certification-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background: cyan;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-download:hover {
+    background: #00c8ff;
+}
+
+/* Navigation Buttons */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(51, 144, 153, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s;
+}
+
+.slider-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+
+    /* Adjust header font size */
+    .header {
+        font-size: 24px;
+    }
+
+    /* Adjust project card width */
+    .project-card {
+        max-width: 100%;
+        /* Full width for small screens */
+    }
+
+    /* Adjust project image height */
+    .project-card img {
+        height: 200px;
+        /* Smaller image for mobile */
+    }
+
+    /* Adjust slider container width */
+    .slider-container {
+        width: 90%;
+    }
+
+    /* Adjust slider item width */
+    .slider-item {
+        min-width: 100%;
+        /* One slide visible at a time */
+    }
+
+    /* Adjust certification card width */
+    .certification-card {
+        min-width: 80%;
+        max-width: 80%;
+    }
+
+    /* Adjust navigation menu */
+    .nav ul {
+        flex-direction: column;
+        /* Stack menu items vertically */
+        gap: 10px;
+    }
+
+    .nav ul li a {
+        font-size: 16px;
+        /* Smaller font size for mobile */
+    }
+}

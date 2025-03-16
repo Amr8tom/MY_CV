@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Spiderweb</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">0%</div>
+
+    <!-- Navigation Menu (Initially Hidden) -->
+    <nav id="navMenu" class="nav">
+        <ul>
+            <li><a href="#screen1">Home</a></li>
+            <li><a href="#projects"></a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Main Sections -->
+    <section id="screen1" class="screen first-screen">
+        <h1> </h1>
+    </section>
+
+
+    <!-- Projects Section with Slider -->
+    <!-- Projects Section with Slider -->
+    <section id="projects">
+        <div class="slider-container">
+            <div class="slider">
+                <!-- Dynamically Loaded Content Will Be Inserted Here -->
+                <div id="projects-content"></div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button class="slider-nav prev">&#10094;</button>
+            <button class="slider-nav next">&#10095;</button>
+        </div>
+    </section>
+
+
+
+
+    <section id="certifications" class="text-center">
+        <h2>Certifications</h2>
+
+        <div class="certification-slider-container">
+            <div class="certification-slider">
+                <div class="certification-track">
+                    <!-- Certification Cards -->
+                    <div class="certification-card">
+                        <img src="flutter_giza.png" alt="Flutter Training Certification in Giza Government">
+                        <h3>Flutter Training Certification in Giza Government</h3>
+                        <p><strong>Issued by:</strong> Giza Government</p>
+                        <p><strong>Date:</strong> Oct 2021</p>
+                        <a href="Flutter Training Certification in Giza Government.pdf" download="flutter_giza.pdf"
+                            class="btn-download">Download Certification</a>
+                    </div>
+
+                    <div class="certification-card">
+                        <img src="flutter1.jpg" alt="The Complete Flutter & Dart Development Course">
+                        <h3>The Complete Flutter & Dart Development Course</h3>
+                        <p><strong>Issued by:</strong> Udemy</p>
+                        <p><strong>Date:</strong> Sept 2022</p>
+                        <a href="flutter1.pdf" download="The Complete Flutter & Dart Development Course.pdf"
+                            class="btn-download">Download Certification</a>
+                    </div>
+
+                    <div class="certification-card">
+                        <img src="flutter2.png" alt="The Complete Flutter Development Guide Course">
+                        <h3>The Complete Flutter Development Guide Course</h3>
+                        <p><strong>Issued by:</strong> Udemy</p>
+                        <p><strong>Date:</strong> Sept 2023</p>
+                        <a href="flutter2.pdf" download="The Complete Flutter Development Guide Course.pdf"
+                            class="btn-download">Download Certification</a>
+                    </div>
+
+                    <div class="certification-card">
+                        <img src="flutter3.png" alt="Flutter Advanced - Clean Architecture With MVVM">
+                        <h3>Flutter Advanced - Clean Architecture With MVVM</h3>
+                        <p><strong>Issued by:</strong> Udemy</p>
+                        <p><strong>Date:</strong> 2023</p>
+                        <a href="UC-51c6725a-d8b8-4bc5-a82c-61f78e291417.pdf"
+                            download="Flutter Advanced - Clean Architecture With MVVM.pdf" class="btn-download">Download
+                            Certification</a>
+                    </div>
+
+                    <div class="certification-card">
+                        <img src="algo.jpg" alt="Searching and Sorting Algorithms Certification">
+                        <h3>Searching and Sorting Algorithms Certification</h3>
+                        <p><strong>Issued by:</strong> Udemy</p>
+                        <p><strong>Date:</strong> Sept 2023</p>
+                        <a href="algo.pdf" download="Searching and Sorting Algorithms Certification.pdf"
+                            class="btn-download">Download
+                            Certification</a>
+                    </div>
+
+                    <div class="certification-card">
+                        <img src="algo2.jpg" alt="Algorithm Analysis and Design Certification">
+                        <h3>Algorithm Analysis and Design Certification</h3>
+                        <p><strong>Issued by:</strong> Udemy</p>
+                        <p><strong>Date:</strong> Sept 2023</p>
+                        <a href="algo2.pdf" download="Algorithm Analysis and Design Certification.pdf"
+                            class="btn-download">Download
+                            Certification</a>
+                    </div>
+
+                    <div class="certification-card">
+                        <img src="bioinformatics.png" alt="Bioinformatics Training Certification">
+                        <h3>Bioinformatics Training Certification</h3>
+                        <p><strong>Issued by:</strong> Cairo University</p>
+                        <p><strong>Date:</strong> June 2022</p>
+                        <a href="i mole.pdf" download="Bioinformatics Training Certification.pdf"
+                            class="btn-download">Download
+                            Certification</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button class="slider-nav prev" onclick="prevCert()">&#10094;</button>
+            <button class="slider-nav next" onclick="nextCert()">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <div class="header" id="mainContent" style="display: none;"></div>
+    <div class="animated-text" id="mobileContent" style="display: none;"></div>
+    <canvas id="spiderCanvas" style="display: none;"></canvas>
+
+    <!-- Contact Info Section -->
+    <div class="contact-info">
+        <p><strong>Eng. Amr Alaa Ali</strong></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/amr-alaa-6433b0222/" target="_blank">Software Engineer</a>
+        </p>
+        <p>WhatsApp: <a href="https://wa.me/+201011577033" target="_blank">+201011577033</a></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="slider.js"></script>
+    <script src="loading.js"></script>
+    <script src="animations.js"></script>
+    <script src="animated_text.js"></script>
+    <script src="scroll.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('projects.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('projects-content').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading projects:', error));
+        });
+    </script>
+
+
+
+
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const track = document.querySelector(".certification-track");
+            const prevButton = document.querySelector(".slider-nav.prev");
+            const nextButton = document.querySelector(".slider-nav.next");
+            const certificationCards = document.querySelectorAll(".certification-card");
+
+            let index = 0;
+            const visibleCards = 3; // Show 3 at a time
+            const cardWidth = certificationCards[0].offsetWidth + 20; // Include margin
+
+            function updateSlider() {
+                track.style.transform = `translateX(-${index * cardWidth}px)`;
+            }
+
+            function nextCert() {
+                if (index < certificationCards.length - visibleCards) {
+                    index++;
+                } else {
+                    index = 0; // Loop back
+                }
+                updateSlider();
+            }
+
+            function prevCert() {
+                if (index > 0) {
+                    index--;
+                } else {
+                    index = certificationCards.length - visibleCards; // Loop back
+                }
+                updateSlider();
+            }
+
+            nextButton.addEventListener("click", nextCert);
+            prevButton.addEventListener("click", prevCert);
+        });
+
+    </script>
+
+
+</body>
+
+</html>
