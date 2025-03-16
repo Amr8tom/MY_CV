@@ -133,58 +133,60 @@ canvas {
     text-decoration: underline;
 }
 
-
-/* Adjust project card styling */
-.project-card {
-    width: 100%;
-    opacity: 0.7;
-    max-width: 400px;
-    /* Control max width */
+/* Project Section */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 10px;
 }
 
+.project-card {
+    width: 100%;
+    max-width: 350px;
+    background: rgba(0, 162, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
 
-
-/* 🔹 Hover Effect for Project Card */
 .project-card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
 }
 
-/* 🔵 Larger Project Images */
 .project-card img {
-    width: 80%;
-    height: 250px;
-    /* Bigger image */
-    /* object-fit: cover; */
-    /* border-radius: 10px; */
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
-/* 🔹 Image Hover Effect */
-/* 🟡 Project Titles */
 .project-card h3 {
-    font-size: 24px;
+    font-size: 22px;
     margin-top: 10px;
     color: #00c8ff;
-    /* Bright cyan */
 }
 
-/* 🟣 Project Description */
 .project-card p {
-
     font-size: 16px;
     color: #c0e3ff;
     margin-bottom: 15px;
 }
 
-/* 🔗 Project Links */
 .project-links {
-    margin-top: 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* 🔵 Stylish Buttons for Links */
 .project-links a {
-    display: inline-block;
     margin: 5px;
     padding: 10px 15px;
     background: linear-gradient(90deg, #ff8c00, #ff2e63);
@@ -195,29 +197,33 @@ canvas {
     transition: background 0.3s, transform 0.2s;
 }
 
-/* 🔹 Button Hover Effect */
 .project-links a:hover {
     background: linear-gradient(90deg, #ff2e63, #ff8c00);
     transform: scale(1.1);
 }
 
-/* Stylish Buttons for Links */
-.project-links a {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 15px;
-    background: linear-gradient(90deg, #ff8c00, #ff2e63);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background 0.3s, transform 0.2s;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        font-size: 24px;
+    }
 
-/* Button Hover Effect */
-.project-links a:hover {
-    background: linear-gradient(90deg, #ff2e63, #ff8c00);
-    transform: scale(1.1);
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        max-width: 90%;
+    }
+
+    .project-card img {
+        max-height: 180px;
+    }
+
+    .project-links a {
+        padding: 8px 12px;
+    }
 }
 
 /* Slider Container */
