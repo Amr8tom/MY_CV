@@ -464,3 +464,34 @@ h2 {
 .next {
     right: 0;
 }
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 24px;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-card {
+        max-width: 90%;
+    }
+
+    .project-card img {
+        max-height: 180px;
+    }
+
+    .project-links a {
+        padding: 8px 12px;
+    }
+}
