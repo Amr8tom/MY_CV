@@ -133,60 +133,59 @@ canvas {
     text-decoration: underline;
 }
 
-/* Project Section */
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px 10px;
-}
 
+
+/* Adjust project card styling */
 .project-card {
     width: 100%;
-    max-width: 350px;
-    background: rgba(0, 162, 255, 0.1);
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-    transition: transform 0.3s ease-in-out;
+    opacity: 0.7;
+    max-width: 400px;
+    /* Control max width */
 }
 
+
+
+/* 🔹 Hover Effect for Project Card */
 .project-card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
 }
 
+/* 🔵 Larger Project Images */
 .project-card img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 80%;
+    height: 250px;
+    /* Bigger image */
+    /* object-fit: cover; */
+    /* border-radius: 10px; */
     transition: transform 0.3s ease-in-out;
 }
 
+/* 🔹 Image Hover Effect */
+/* 🟡 Project Titles */
 .project-card h3 {
-    font-size: 22px;
+    font-size: 24px;
     margin-top: 10px;
     color: #00c8ff;
+    /* Bright cyan */
 }
 
+/* 🟣 Project Description */
 .project-card p {
+
     font-size: 16px;
     color: #c0e3ff;
     margin-bottom: 15px;
 }
 
+/* 🔗 Project Links */
 .project-links {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
+/* 🔵 Stylish Buttons for Links */
 .project-links a {
+    display: inline-block;
     margin: 5px;
     padding: 10px 15px;
     background: linear-gradient(90deg, #ff8c00, #ff2e63);
@@ -197,41 +196,63 @@ canvas {
     transition: background 0.3s, transform 0.2s;
 }
 
+/* 🔹 Button Hover Effect */
 .project-links a:hover {
     background: linear-gradient(90deg, #ff2e63, #ff8c00);
     transform: scale(1.1);
 }
 
-/* Responsive Design */
+/* 🌐 Responsive Layout */
 @media (max-width: 768px) {
-    .header {
-        font-size: 24px;
-    }
-
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .project-card {
-        max-width: 90%;
+        max-width: 100%;
+        /* Full width for small screens */
     }
 
     .project-card img {
-        max-height: 180px;
-    }
-
-    .project-links a {
-        padding: 8px 12px;
+        height: 250px;
+        /* Adjust image size */
     }
 }
 
-/* Slider Container */
+
+* Section styling */ section {
+    padding: 60px 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+
+/* Projects section */
+#projects .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(20px, 1fr));
+    /* Ensures exactly 2 columns */
+    justify-content: center;
+    /* Centers the grid */
+}
+
+
+
+
+
+/* Active Slide */
+.slider-item.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+
+/* Center the slider */
 .slider-container {
     position: relative;
-    width: 80%;
-    max-width: 1000px;
-    margin: 0 auto;
+    width: 70%;
+    max-width: 2000px;
+    margin: 20px auto;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -241,7 +262,7 @@ canvas {
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 100%;
+    width: 70%;
 }
 
 /* Each Slide */
@@ -277,6 +298,12 @@ canvas {
 .next {
     right: 10px;
 }
+
+
+
+
+
+
 
 /* Full Height Sections */
 .screen {
@@ -339,6 +366,12 @@ canvas {
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
+
+
+
 
 /* Certifications Section */
 #certifications {
@@ -430,54 +463,4 @@ canvas {
 
 .next {
     right: 0;
-}
-
-/* Responsive Design for Mobile Devices */
-@media (max-width: 768px) {
-
-    /* Adjust header font size */
-    .header {
-        font-size: 24px;
-    }
-
-    /* Adjust project card width */
-    .project-card {
-        max-width: 100%;
-        /* Full width for small screens */
-    }
-
-    /* Adjust project image height */
-    .project-card img {
-        height: 200px;
-        /* Smaller image for mobile */
-    }
-
-    /* Adjust slider container width */
-    .slider-container {
-        width: 90%;
-    }
-
-    /* Adjust slider item width */
-    .slider-item {
-        min-width: 100%;
-        /* One slide visible at a time */
-    }
-
-    /* Adjust certification card width */
-    .certification-card {
-        min-width: 80%;
-        max-width: 80%;
-    }
-
-    /* Adjust navigation menu */
-    .nav ul {
-        flex-direction: column;
-        /* Stack menu items vertically */
-        gap: 10px;
-    }
-
-    .nav ul li a {
-        font-size: 16px;
-        /* Smaller font size for mobile */
-    }
 }
