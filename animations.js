@@ -13,6 +13,8 @@ function startAnimation() {
     });
 
     class Node {
+
+
         constructor(x, y, text) {
             this.x = x;
             this.y = y;
@@ -59,6 +61,7 @@ function startAnimation() {
             let y = Math.random() * canvas.height;
             nodes.push(new Node(x, y, texts[i]));
         }
+
         for (let i = 0; i < 50; i++) {
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;

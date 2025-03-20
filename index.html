@@ -169,7 +169,6 @@
 
     <script>
 
-
         document.addEventListener("DOMContentLoaded", function () {
             const track = document.querySelector(".certification-track");
             const prevButton = document.querySelector(".slider-nav.prev");
@@ -177,34 +176,40 @@
             const certificationCards = document.querySelectorAll(".certification-card");
 
             let index = 0;
-            const visibleCards = 3; // Show 3 at a time
-            const cardWidth = certificationCards[0].offsetWidth + 20; // Include margin
+            const visibleCards = 3; // Show 3 cards at a time
+            const cardWidth = certificationCards[0].offsetWidth + 20; // Include margin or padding if any
 
+            // Update the slider to translate the track
             function updateSlider() {
+                track.style.transition = 'transform 0.5s ease-in-out'; // Smooth transition
                 track.style.transform = `translateX(-${index * cardWidth}px)`;
             }
 
+            // Next slide function
             function nextCert() {
                 if (index < certificationCards.length - visibleCards) {
                     index++;
                 } else {
-                    index = 0; // Loop back
+                    index = 0; // Loop back to the first card
                 }
                 updateSlider();
             }
 
+            // Previous slide function
             function prevCert() {
                 if (index > 0) {
                     index--;
                 } else {
-                    index = certificationCards.length - visibleCards; // Loop back
+                    index = certificationCards.length - visibleCards; // Loop back to the last card
                 }
                 updateSlider();
             }
 
+            // Attach event listeners to the buttons
             nextButton.addEventListener("click", nextCert);
             prevButton.addEventListener("click", prevCert);
         });
+
 
     </script>
     <script>

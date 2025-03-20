@@ -10,6 +10,8 @@ let loadingInterval = setInterval(() => {
         document.getElementById("loadingScreen").innerText = loadProgress + "";
         drawMobileFrame(loadProgress); // Draw the frame based on progress
     } else {
+
+
         clearInterval(loadingInterval);
 
         // Hide the loading screen
