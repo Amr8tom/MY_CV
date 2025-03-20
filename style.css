@@ -139,10 +139,12 @@ canvas {
 /* Adjust project card styling */
 .project-card {
     width: 100%;
-    opacity: 0.9;
+    opacity: 0.8;
     max-width: 400px;
     /* Control max width */
-    background: linear-gradient(135deg, #00c8ff, #ff8c00);
+    background: linear-gradient(90deg, #00c8ff, #111d1d);
+
+    /* background: linear-gradient(135deg, #00c8ff, #484540); */
     /* Gradient background */
     border-radius: 12px;
     /* Rounded corners */
@@ -180,14 +182,14 @@ canvas {
 .project-card h3 {
     font-size: 24px;
     margin-top: 10px;
-    color: white;
+    color: rgb(0, 0, 0);
     /* Text color for project title */
 }
 
 /* 🟣 Project Description */
 .project-card p {
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
     /* Lighter text color for description */
     margin-bottom: 15px;
 }
@@ -202,7 +204,9 @@ canvas {
     display: inline-block;
     margin: 5px;
     padding: 10px 15px;
-    background: linear-gradient(90deg, #ff8c00, #ff2e63);
+    background: linear-gradient(90deg, #00c8ff, #1a5f4e);
+
+    /* background: linear-gradient(90deg, #ff8c00, #ff2e63); */
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -212,7 +216,8 @@ canvas {
 
 /* 🔹 Button Hover Effect */
 .project-links a:hover {
-    background: linear-gradient(90deg, #ff2e63, #ff8c00);
+
+    background: linear-gradient(90deg, #00c8ff, #090d2f);
     transform: scale(1.1);
 }
 
@@ -456,8 +461,8 @@ h2 {
 /* Certification Cards */
 /* Certification Cards */
 .certification-card {
-    min-width: 30%;
-    max-width: 30%;
+    min-width: 50%;
+    max-width: 50%;
     margin: 10px;
     padding: 20px;
     background: #222;
@@ -471,7 +476,7 @@ h2 {
 /* Certification Card Image */
 .certification-card img {
     width: 100%;
-    height: 60%;
+    height: 70%;
     /* Adjust height for image */
     object-fit: cover;
     border-radius: 5px;
