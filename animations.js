@@ -62,11 +62,18 @@ function startAnimation() {
             nodes.push(new Node(x, y, texts[i]));
         }
 
-        for (let i = 0; i < 50; i++) {
+        // Determine if it's a mobile screen
+        const isMobile = window.innerWidth <= 768;
+
+        // Set number of nodes based on screen size
+        const extraNodeCount = isMobile ? 15 : 50;
+
+        for (let i = 0; i < extraNodeCount; i++) {
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;
             nodes.push(new Node(x, y, ""));
         }
+
     }
 
     function connectNodes() {
