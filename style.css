@@ -268,7 +268,7 @@ h2 {
 /* Container for the Slider */
 .slider-container {
     position: relative;
-    width: 90%;
+    width: 120%;
     max-width: 2000px;
     margin: 20px auto;
     overflow: hidden;
@@ -322,8 +322,13 @@ h2 {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.prev,
-.next {
+.certifications-prev {
+    left: 20px;
+    display: inline-block;
+}
+
+.certifications-next {
+    right: 20px;
     display: inline-block;
 }
 
@@ -577,6 +582,7 @@ h2 {
 
 
     .projects-container {
+        width: 100%;
         grid-template-columns: repeat(1, 1fr);
     }
 
@@ -606,9 +612,9 @@ h2 {
     }
 
     .slider-container {
-        width: 70%;
-        max-width: 80%;
-        margin: 10px auto;
+        width: 95%;
+        max-width: 100%;
+        /* margin: 10px auto; */
 
     }
 
@@ -617,6 +623,7 @@ h2 {
     }
 
     .projects-container {
+        width: 100%;
         grid-template-columns: repeat(1, 1fr);
     }
 
@@ -624,9 +631,13 @@ h2 {
         max-width: 100%;
     }
 
-    .project-card img {
-        max-height: 35%;
+    .certification-card img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: contain;
     }
+
 
     .project-links a {
         padding: 4px 8px;
@@ -634,8 +645,8 @@ h2 {
 
     /* Certification Cards */
     .certification-card {
-        min-width: 50%;
-        max-width: 50%;
+        min-width: 90%;
+        max-width: 70%;
         margin: 5px;
 
         text-align: center;

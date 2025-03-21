@@ -125,8 +125,8 @@
             </div>
 
             <!-- Navigation Buttons -->
-            <button class="slider-nav prev" onclick="prevCert()">&#10094;</button>
-            <button class="slider-nav next" onclick="nextCert()">&#10095;</button>
+            <button class="slider-nav certifications-prev">&#10094;</button>
+            <button class="slider-nav certifications-next">&#10095;</button>
         </div>
     </section>
 
@@ -153,64 +153,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('projects.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('projects-content').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading projects:', error));
-        });
-    </script>
-
-
-
-
-    <script>
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const track = document.querySelector(".certification-track");
-            const prevButton = document.querySelector(".slider-nav.prev");
-            const nextButton = document.querySelector(".slider-nav.next");
-            const certificationCards = document.querySelectorAll(".certification-card");
-
-            let index = 0;
-            const visibleCards = 3; // Show 3 cards at a time
-            const cardWidth = certificationCards[0].offsetWidth + 20; // Include margin or padding if any
-
-            // Update the slider to translate the track
-            function updateSlider() {
-                track.style.transition = 'transform 0.5s ease-in-out'; // Smooth transition
-                track.style.transform = `translateX(-${index * cardWidth}px)`;
-            }
-
-            // Next slide function
-            function nextCert() {
-                if (index < certificationCards.length - visibleCards) {
-                    index++;
-                } else {
-                    index = 0; // Loop back to the first card
-                }
-                updateSlider();
-            }
-
-            // Previous slide function
-            function prevCert() {
-                if (index > 0) {
-                    index--;
-                } else {
-                    index = certificationCards.length - visibleCards; // Loop back to the last card
-                }
-                updateSlider();
-            }
-
-            // Attach event listeners to the buttons
-            nextButton.addEventListener("click", nextCert);
-            prevButton.addEventListener("click", prevCert);
-        });
-
-
+    <script src="certification_slider.js">
     </script>
     <script>
 

@@ -1,14 +1,8 @@
-// certification_slider.js
-function initializeCertificationsSlider() {
+document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".certification-track");
-    const prevButton = document.querySelector(".certifications-prev");
-    const nextButton = document.querySelector(".certifications-next");
+    const prevButton = document.querySelector(".certifications-prev"); // Use unique class
+    const nextButton = document.querySelector(".certifications-next"); // Use unique class
     const certificationCards = document.querySelectorAll(".certification-card");
-
-    if (!track || !prevButton || !nextButton || certificationCards.length === 0) {
-        console.error("Certifications slider elements not found!");
-        return;
-    }
 
     let index = 0;
     const visibleCards = 2; // Show 2 cards at a time
@@ -42,18 +36,6 @@ function initializeCertificationsSlider() {
 
     // Attach event listeners to the buttons
     prevButton.addEventListener("click", prevCert);
+    nextButton.addEventListener("click", nextCert);
+});
 
-    document.addEventListener("DOMContentLoaded", function () {
-        fetch('certifications.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("HTTP error! Status: " + response.status);
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('certification-content').innerHTML = data;
-                setTimeout(initializeCertificationsSlider, 500);
-            })
-            .catch(error => console.error('Error loading certifications:', error));
-    });
