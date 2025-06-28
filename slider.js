@@ -25,28 +25,55 @@ function initializeSlider() {
 
     let currentIndex = 0;
     let slideInterval;
-    let slidesPerView = 3; // Default for desktop
+    let slidesPerView = 1; // Default mobile first
     
-    // Check if mobile
-    function isMobile() {
-        return window.innerWidth <= 768;
-    }
-    
+    // Enhanced responsive function
     function updateSlidesPerView() {
-        slidesPerView = isMobile() ? 1 : 3;
+        if (window.innerWidth <= 480) {
+            slidesPerView = 1; // Small mobile
+        } else if (window.innerWidth <= 768) {
+            slidesPerView = 1; // Mobile
+        } else if (window.innerWidth <= 1024) {
+            slidesPerView = 2; // Tablet
+        } else {
+            slidesPerView = 3; // Desktop
+        }
     }
     
     // Set initial slider styles
     slider.style.display = 'flex';
     slider.style.transition = 'transform 0.5s ease-in-out';
-    slider.style.width = `${slides.length * 100}%`;
+    slider.style.width = '100%'; // Fixed width calculation
+    slider.style.height = 'auto';
+    slider.style.minHeight = '600px';
     
     function updateSlideStyles() {
         updateSlidesPerView();
+        
+        // Apply CSS styles to slides for proper mobile display
         slides.forEach(slide => {
             slide.style.minWidth = `${100 / slidesPerView}%`;
+            slide.style.maxWidth = `${100 / slidesPerView}%`;
             slide.style.flex = '0 0 auto';
+            slide.style.boxSizing = 'border-box';
+            slide.style.height = 'auto';
+            slide.style.display = 'flex';
+            slide.style.alignItems = 'stretch';
+            slide.style.justifyContent = 'center';
+            
+            // Ensure project cards are properly sized
+            const projectCard = slide.querySelector('.project-card');
+            if (projectCard) {
+                projectCard.style.width = '100%';
+                projectCard.style.maxWidth = '100%';
+                projectCard.style.display = 'flex';
+                projectCard.style.flexDirection = 'column';
+                projectCard.style.height = 'auto';
+                projectCard.style.minHeight = window.innerWidth <= 480 ? '500px' : '550px';
+            }
         });
+        
+        console.log(`Updated for ${slidesPerView} slides per view on ${window.innerWidth}px screen`);
     }
     
     updateSlideStyles();
