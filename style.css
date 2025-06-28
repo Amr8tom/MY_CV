@@ -285,7 +285,7 @@ h2 {
 
 /* Each Slide */
 .slider-item {
-    min-width: 31%;
+    min-width: 100%;
     /* Change this based on how many items you'd like visible at once */
     display: flex;
     justify-content: center;
