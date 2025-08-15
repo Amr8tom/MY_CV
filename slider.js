@@ -28,22 +28,49 @@ function initializeSlider() {
     let slidesPerView = 1; // Default mobile first
     
     // Enhanced responsive function
+    // function updateSlidesPerView() {
+
+    //     if (window.innerWidth <= 480) {
+    //         slidesPerView = 1; // Small mobile
+    //     } else if (window.innerWidth <= 768) {
+    //         slidesPerView = 1; // Mobile
+    //     } else if (window.innerWidth <= 1024) {
+    //         slidesPerView = 2; // Tablet
+    //     } 
+    //     else if (window.innerWidth <= 1200) {
+    //         slidesPerView = 3; // Small Desktop
+    //     } 
+    //     else if (window.innerWidth <= 1400) {
+    //         slidesPerView = 4; // Large Desktop
+    //     } 
+    //     /// iphone pro max
+
+    //     else if (window.innerWidth   <= 1600) {
+    //         slidesPerView = 1; // Extra Large Desktop
+    //     } 
+    //     else {
+    //         slidesPerView = 3; // Desktop
+    //     }
+    // }
     function updateSlidesPerView() {
-        if (window.innerWidth <= 480) {
-            slidesPerView = 1; // Small mobile
-        } else if (window.innerWidth <= 768) {
-            slidesPerView = 1; // Mobile
-        } else if (window.innerWidth <= 1024) {
-            slidesPerView = 2; // Tablet
-        } else {
-            slidesPerView = 3; // Desktop
-        }
+    const width = window.innerWidth;
+
+    if (width <= 768) {
+        // Mobile (including iPhone)
+        slidesPerView = 1;
+    } else if (width <= 1024) {
+        // Tablet
+        slidesPerView = 2;
+    } else {
+        // Desktop
+        slidesPerView = 4;
     }
+}
     
-    // Set initial slider styles
+    // Set initial slider styles with enhanced animations
     slider.style.display = 'flex';
-    slider.style.transition = 'transform 0.5s ease-in-out';
-    slider.style.width = '100%'; // Fixed width calculation
+    slider.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'; // Smoother easing
+    slider.style.width = '100%';
     slider.style.height = 'auto';
     slider.style.minHeight = '600px';
     
@@ -61,7 +88,7 @@ function initializeSlider() {
             slide.style.alignItems = 'stretch';
             slide.style.justifyContent = 'center';
             
-            // Ensure project cards are properly sized
+            // Ensure project cards are properly sized with enhanced animations
             const projectCard = slide.querySelector('.project-card');
             if (projectCard) {
                 projectCard.style.width = '100%';
@@ -70,13 +97,59 @@ function initializeSlider() {
                 projectCard.style.flexDirection = 'column';
                 projectCard.style.height = 'auto';
                 projectCard.style.minHeight = window.innerWidth <= 480 ? '500px' : '550px';
+                projectCard.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                projectCard.style.transformOrigin = 'center';
+                
+                // Add dynamic hover effects
+                projectCard.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                    this.style.boxShadow = '0 20px 40px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 162, 255, 0.3)';
+                    this.style.filter = 'brightness(1.1)';
+                });
+                
+                projectCard.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    this.style.boxShadow = '0px 5px 15px rgba(0, 0, 0, 0.1)';
+                    this.style.filter = 'brightness(1)';
+                });
             }
         });
         
         console.log(`Updated for ${slidesPerView} slides per view on ${window.innerWidth}px screen`);
     }
     
+    // Enhanced navigation with visual feedback
+    function addButtonEffects() {
+        [prevButton, nextButton].forEach(button => {
+            if (button) {
+                button.style.transition = 'all 0.3s ease';
+                button.style.backdropFilter = 'blur(10px)';
+                button.style.border = '2px solid rgba(0, 255, 255, 0.3)';
+                
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.15)';
+                    this.style.background = 'rgba(0, 255, 255, 0.8)';
+                    this.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.6)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.background = 'rgba(0, 0, 0, 0.3)';
+                    this.style.boxShadow = 'none';
+                });
+                
+                button.addEventListener('click', function() {
+                    this.style.animation = 'pulse 0.6s ease-out';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 600);
+                });
+            }
+        });
+    }
+    
     updateSlideStyles();
+    addButtonEffects();
 
     function updateSlider() {
         updateSlidesPerView();
